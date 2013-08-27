@@ -17,14 +17,14 @@
         h (height)]
 
     (background 200)
-    (stroke-weight 5)
+    (stroke-weight 3)
 
     (translate (/ w 2.0) (/ h 2.0))
-    (scale (/ (min w h) 50.0))
+    (scale (/ (min w h) 150.0))
     
     (doseq [[[x y z] color] (map vector (leap/fingers) finger-colors)]
-      (apply stroke (map (partial * 2) color))             
       (apply fill color)
+      (apply stroke (map (partial * 2) color))             
       (let [size (/ (- 300 y) 2)]
         (ellipse x z size size)))))
 

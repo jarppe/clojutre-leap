@@ -1,5 +1,5 @@
 (ns clojutre-leap.leap
-  (:import [com.leapmotion.leap Listener Controller Hand Frame Finger FingerList Vector Gesture GestureList Gesture$Type Pointable]))
+  (:import [com.leapmotion.leap Controller Hand Finger Vector]))
 
 (set! *warn-on-reflection* true)
 
