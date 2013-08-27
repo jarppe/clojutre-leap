@@ -30,18 +30,15 @@
   (smooth)
   (frame-rate 10))
 
-(def finger-colors [[128   0   0] [  0 128   0] [  0   0 128]  [  0 128 128] [128 128   0]])
+(def finger-colors [[128 0 0] [0 128 0] [0 0 128] [0 128 128] [128 128 0]])
 
 (defn draw []
   (let [w (width)
         h (height)]
-
     (background 200)
     (stroke-weight 3)
-
     (translate (/ w 2.0) (/ h 2.0))
     (scale (/ (min w h) 150.0))
-    
     (doseq [[[x y z] color] (map vector (fingers) finger-colors)]
       (apply fill color)
       (apply stroke (map (partial * 2) color))             
